@@ -1,6 +1,4 @@
-price = 10
-price = 1
-name = "Mosh"
-is_published = False
-print(price)
-print(is_published)
+numbers = [5,12,5,22,10]
+letters = ['j','!', 'z', 'b']
+print(max(numbers))
+print(max(letters))
