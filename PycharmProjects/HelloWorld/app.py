@@ -1,4 +1,8 @@
-numbers = [5,12,5,22,10]
-letters = ['j','!', 'z', 'b']
-print(max(numbers))
-print(max(letters))
+from pathlib import Path
+
+path = Path();
+for file in path.glob('*.py'):
+    print(file);
+#change the format at the end to search specific files
+
+

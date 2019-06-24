@@ -1,13 +1,16 @@
-message = input(">");
-words = message.split(' ');
+def emoji_converter(message):
+    words = message.split(' ');
 
-emogis = {
-    ":)": "😀",
-    ":(": "😞",
-}
+    emogis = {
+        ":)": "😀",
+        ":(": "😞",
+    }
 
-output = "";
-for word in words:
-    output += emogis.get(word, word) + " ";
+    output = "";
+    for word in words:
+        output += emogis.get(word, word) + " ";
+    return output
 
-print(output);
+
+message = input("> ");
+print(emoji_converter(message));
