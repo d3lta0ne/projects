@@ -3,6 +3,7 @@ import axios from "../axios.js";
 import "../styles/Row.css";
 const baseURL = "https://api.themoviedb.org/3";
 const baseURL_img = "https://image.tmdb.org/t/p/original";
+
 const Row = (props) => {
   const [movies, setMovies] = useState([]);
 
@@ -16,22 +17,21 @@ const Row = (props) => {
     fetchData();
   }, [props.fetchURL]);
 
-  // console.table(movies);
   return (
     <div className="row">
       <h2>{props.title}</h2>
 
-      <div className="row_posters">
+      <div className="row__posters">
         {movies.map((movie) => (
           <img
             key={movie.id}
-            className="row_poster"
-            src={`${baseURL_img}${movie.poster_path}`}
+            className={`row__poster ${props.isLargeRow && "row__posterLarge"}`}
+            src={`${baseURL_img}${
+              props.isLargeRow ? movie.poster_path : movie.backdrop_path
+            }`}
           />
         ))}
       </div>
-
-      {/* container -- posters */}
     </div>
   );
 };
