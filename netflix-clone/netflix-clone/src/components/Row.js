@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "../axios.js";
 import "../styles/Row.css";
-const baseURL = "https://api.themoviedb.org/3";
 const baseURL_img = "https://image.tmdb.org/t/p/original";
 
 const Row = (props) => {
@@ -9,13 +8,15 @@ const Row = (props) => {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(baseURL + props.fetchURL);
+      const request = await axios.get(props.fetchURL);
       setMovies(request.data.results);
       return request;
     }
 
     fetchData();
   }, [props.fetchURL]);
+
+  // console.log(movies);
 
   return (
     <div className="row">
@@ -29,6 +30,7 @@ const Row = (props) => {
             src={`${baseURL_img}${
               props.isLargeRow ? movie.poster_path : movie.backdrop_path
             }`}
+            alt={movie.original_name}
           />
         ))}
       </div>
