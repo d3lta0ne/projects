@@ -8,7 +8,7 @@ import requests from "./requests.js";
 function App() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
+      <Navbar />
       <Banner />
       <Row
         title="Netflix Originals"
