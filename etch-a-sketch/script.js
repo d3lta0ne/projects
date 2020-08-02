@@ -8,11 +8,13 @@ createGrid = () => {
   GRID.style.setProperty("grid-template-columns", `repeat(${sz}, 1fr)`);
   GRID.style.setProperty("grid-template-rows", `repeat(${sz}, 1fr)`);
 
-  for (let i = 0; i < sz * sz; i++) {
+  for (let i = 1; i <= sz * sz; i++) {
     const cells = document.createElement("div");
     cells.classList.add("cell");
     cells.addEventListener("mouseover", function (event) {
-      // event.target.classList.add("color");
+      // cells.style.backgroundImage = `url("images/nicky-cage-6/image_part_${(
+      //   "000" + i
+      // ).substr(-3)}.jpg")`;
       color(event);
     });
     GRID.appendChild(cells);
@@ -25,7 +27,7 @@ color = (event) => {
     window.getComputedStyle(event.target).getPropertyValue("opacity")
   );
   if (currentOpacity < 1) {
-    currentOpacity += 0.05;
+    currentOpacity += 0.5;
     event.target.style.setProperty("opacity", currentOpacity);
   }
 };
