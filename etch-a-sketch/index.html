@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Nicky Cage Face Page</title>
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <h1>Nicky Cage Face Page</h1>
-        <p>Welcome to my Nicky Cage Face Page for the </p>
+      <h1>Nicky Cage Face Page</h1>
+      <p>Welcome to my Nicky Cage Face Page for the Odin Project</p>
     </header>
 
-    <section class= "buttons">
-        <button id = "reset">Reset</button>
-        <button id = "resize">Resize</button>
+    <section class="buttons">
+      <div class="resize-container">
+        <input
+          type="number"
+          id="resize-number"
+          min="0"
+          max="64"
+          placeholder="Size?"
+        />
+        <button id="resize-button">Resize</button>
+      </div>
+      <button id="reset">Reset</button>
     </section>
-    <section id = "master-grid">
-    </section>
+    <section id="master-grid"></section>
 
     <footer>
-        <p>This project was created in collaboration with <a href="www.https://www.theodinproject.com/courses/web-development-101/lessons/etch-a-sketch-project"> The Odin Project</a>
-        and my deep love with sequin pillows.</p>
+      <p>
+        This project was created in collaboration with
+        <a
+          href="www.https://www.theodinproject.com/courses/web-development-101/lessons/etch-a-sketch-project"
+        >
+          The Odin Project</a
+        >
+        and my deep love with sequin pillows.
+      </p>
     </footer>
-</body>
-
-
+  </body>
 </html>

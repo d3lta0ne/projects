@@ -1,7 +1,6 @@
-// var sz = Number(prompt("How big is the grid?"));
-let sz = 5;
+let sz = 10;
 const GRID = document.getElementById("master-grid");
-const RESIZE = document.getElementById("resize");
+const RESIZE = document.getElementById("resize-button");
 const RESET = document.getElementById("reset");
 
 // Function that creates the grid space
@@ -13,18 +12,30 @@ createGrid = () => {
     const cells = document.createElement("div");
     cells.classList.add("cell");
     cells.addEventListener("mouseover", function (event) {
-      event.target.classList.toggle("color");
+      // event.target.classList.add("color");
+      color(event);
     });
     GRID.appendChild(cells);
   }
 };
-// console.log(GRID.getElementsByClassName("cell"));
+
+// Create functionality for fade event
+color = (event) => {
+  let currentOpacity = Number(
+    window.getComputedStyle(event.target).getPropertyValue("opacity")
+  );
+  if (currentOpacity < 1) {
+    currentOpacity += 0.05;
+    event.target.style.setProperty("opacity", currentOpacity);
+  }
+};
 
 //Function to clear the board on the grid space
 resetGrid = () => {
   let grid = GRID.getElementsByClassName("cell");
   for (let i = 0; i < grid.length; i++) {
     grid[i].classList.remove("color");
+    grid[i].style.setProperty("opacity", "0");
   }
 };
 
@@ -43,12 +54,16 @@ clearGrid = () => {
 //Funciton to resize the size of the current grid
 resizeGrid = () => {
   clearGrid();
-  sz = 10;
+
+  // check input value
+  let tempSZ = document.getElementById("resize-number").value;
+  sz = tempSZ > 0 && tempSZ <= 64 ? tempSZ : sz;
+
   createGrid();
 };
-
-createGrid();
 
 //Add Event listeners to the buttons
 RESET.addEventListener("click", resetGrid);
 RESIZE.addEventListener("click", resizeGrid);
+
+createGrid();
