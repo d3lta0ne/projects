@@ -1,35 +1,33 @@
-html{
-    display: inline-block;
-    text-align: center;
+html {
+  display: inline-block;
+  text-align: center;
 }
 
-#master-grid{
-    height: 960px;
-    width: 960px;
-    
-    background-color: orange;
-    background-image: url("nicky-cage.jpg");
-    background-position: center;
-    background-size: contain;
+#master-grid {
+  height: 960px;
+  width: 960px;
 
-    margin-top: 25px;
-    margin-right: 40px;
-    display: inline-grid;
-    /* grid-template-columns: repeat(16, 2fr);
+  background-color: orange;
+  background-image: url("images/nicky-cage.jpg");
+  background-position: center;
+  background-size: contain;
+
+  margin-top: 25px;
+  margin-right: 40px;
+  display: inline-grid;
+  /* grid-template-columns: repeat(16, 2fr);
     grid-template-rows: repeat(16, 2fr); */
-    border: 5px solid black;
-    border-radius: 5px;
-    
+  border: 5px solid black;
+  border-radius: 5px;
 }
 
-.cell{
-    display: block;
-    border: 1px solid white;
-    background-color: #ceb4a6
+.cell {
+  display: block;
+  border: 1px solid white;
+  background-color: #ceb4a6;
 }
 
 .color {
-    border: 1px solid white;
-    background-color: transparent;
-  }
-  
+  border: 1px solid white;
+  background-color: transparent;
+}
