@@ -31,6 +31,10 @@ resetGrid = () => {
 // Function to remove all the cells in the grid
 clearGrid = () => {
   let grid = GRID;
+  grid.style.setProperty(
+    "background-image",
+    `url("images/nicky-cage-${Math.floor(Math.random() * 5 + 1)}.jpg")`
+  );
   while (GRID.firstChild) {
     GRID.removeChild(GRID.lastChild);
   }

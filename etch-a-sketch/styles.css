@@ -8,9 +8,9 @@ html {
   width: 960px;
 
   background-color: orange;
-  background-image: url("images/nicky-cage.jpg");
+  background-image: url("images/nicky-cage-2.jpg");
   background-position: center;
-  background-size: contain;
+  background-size: cover;
 
   margin-top: 25px;
   margin-right: 40px;
