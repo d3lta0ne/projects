@@ -27,7 +27,7 @@ color = (event) => {
     window.getComputedStyle(event.target).getPropertyValue("opacity")
   );
   if (currentOpacity < 1) {
-    currentOpacity += 0.5;
+    currentOpacity += 0.1;
     event.target.style.setProperty("opacity", currentOpacity);
   }
 };

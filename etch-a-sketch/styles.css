@@ -1,19 +1,66 @@
-html {
+* {
   display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px;
+
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+header p {
+  font-size: 12px;
+  text-decoration: wavy;
+}
+
+button {
+  width: 10em;
+  height: 3em;
+  text-decoration: none;
+  border: none;
+  border-radius: 10%;
+}
+
+#resize-number {
+  width: 5em;
+}
+
 #master-grid {
-  height: 960px;
-  width: 960px;
+  height: 80%;
+  /* width: max-content; */
+  width: 80%;
 
   background-color: whitesmoke;
   /* background-image: url("images/nicky-cage-2.jpg"); */
   background-position: center;
   background-size: cover;
 
-  margin-top: 25px;
-  margin-right: 40px;
   display: inline-grid;
   border: 5px solid black;
   border-radius: 10px;
@@ -23,7 +70,7 @@ html {
 
 .cell {
   display: block;
-  border: 1px dashed gray;
+  border: none;
   background-color: black;
   opacity: 0;
 }
