@@ -1,3 +1,13 @@
+/* Specific Class Modifers */
+.app{
+  place-items:center;
+}
+
+.app__body{
+  height:90vh;
+  width: 90vw;
+
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
