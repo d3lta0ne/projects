@@ -17,6 +17,12 @@ This is a simple Python application for rolling dice using a graphical user inte
 - Python 3.x
 - Tkinter (usually included with Python installations)
 
+## TODOs
+
+- [ ] Update documentation.
+- [ ] Add screenshots to the /screenshots folder
+- [ ] Add more test cases.
+
 ## Usage
 
 1. Clone the repository:
@@ -41,7 +47,7 @@ This is a simple Python application for rolling dice using a graphical user inte
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
+TODO: ![Screenshot 1](screenshots/screenshot1.png)
 
 _Add additional screenshots or GIFs here._
 
