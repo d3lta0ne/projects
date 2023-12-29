@@ -20,7 +20,7 @@ DICE_FACE = {
     12: '⚋',  # Unicode for Dice Face 12
 }
 
-APP = Tk()
+APP = tkinter.Tk()
 
 
 def get_dice_face(roll: int) -> str:
@@ -37,10 +37,11 @@ def get_dice_face(roll: int) -> str:
 
 
 def roll():
+    """roll function"""
     from random import randint
     random_roll = randint(1, 6)
-    msg = Label(APP, text=get_dice_face(-1),
-                font=('Times', 100), foreground='white')
+    msg = tkinter.Label(APP, text=get_dice_face(random_roll),
+                        font=('Times', 100), foreground='white')
 
 
 def main():
@@ -48,10 +49,10 @@ def main():
 
     :return: None - Main function does not return anything
     """
-    DICE = Label(APP, text=get_dice_face(-1),
-                 font=('Times', 100), foreground='white')
+    DICE = tkinter.Label(APP, text=get_dice_face(-1),
+                         font=('Times', 100), foreground='white')
     DICE.grid(row=0, column=0, padx=25, pady=5)
-    ROLL_BUTTON = Button(APP, text='Roll', command=roll)
+    ROLL_BUTTON = tkinter.Button(APP, text='Roll', command=roll)
     ROLL_BUTTON.grid(row=1, column=1)
     APP.mainloop()
 
