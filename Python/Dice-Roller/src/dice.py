@@ -2,11 +2,10 @@
 """
 Dice Roller applications
 """
-from tkinter import *
-
+import tkinter
 
 DICE_FACE = {
-    0: '?' # Unicoode for No Dice Roll
+    -1: '?',  # Unicoode for No Dice Roll
     1: '⚀',  # Unicode for Dice Face 1
     2: '⚁',  # Unicode for Dice Face 2
     3: '⚂',  # Unicode for Dice Face 3
@@ -21,6 +20,8 @@ DICE_FACE = {
     12: '⚋',  # Unicode for Dice Face 12
 }
 
+APP = Tk()
+
 
 def get_dice_face(roll: int) -> str:
     """Get the Unicode representation of a dice face.
@@ -30,16 +31,29 @@ def get_dice_face(roll: int) -> str:
 
     This function takes an integer representing the result of rolling a six-sided
     die and returns the Unicode character corresponding to the face with that value.
-    If the provided roll is not within the valid range (1 to 12), it returns 'Unknown'.
+    If the provided roll is not within the valid range (1 to 12), it returns '?'.
     """
-    return DICE_FACE.get(roll, 'Unknown')
+    return DICE_FACE.get(roll, -1)
+
+
+def roll():
+    from random import randint
+    random_roll = randint(1, 6)
+    msg = Label(APP, text=get_dice_face(-1),
+                font=('Times', 100), foreground='white')
 
 
 def main():
     """Main function
 
-    :return: None - function does not return anything
+    :return: None - Main function does not return anything
     """
+    DICE = Label(APP, text=get_dice_face(-1),
+                 font=('Times', 100), foreground='white')
+    DICE.grid(row=0, column=0, padx=25, pady=5)
+    ROLL_BUTTON = Button(APP, text='Roll', command=roll)
+    ROLL_BUTTON.grid(row=1, column=1)
+    APP.mainloop()
 
 
 if __name__ == "__main__":
